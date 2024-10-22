@@ -10,9 +10,6 @@ import fulldev from 'fulldev-ui/integration'
 
 
 
-import cloudflare from '@astrojs/cloudflare';
-
-
 
 // https://astro.build/config
 export default defineConfig({
