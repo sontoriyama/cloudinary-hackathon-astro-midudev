@@ -4,6 +4,8 @@ import { CldUploadWidget, CldImage } from "astro-cloudinary"
 
 import Button from "fulldev-ui/components/Button.astro"
 import Heading from "fulldev-ui/components/Heading.astro"
+import Halloween from "../components/Halloween.astro"
+import Halloween2 from "../components/Halloween2.astro"
 
 import { getCollection } from "astro:content"
 import type { Image } from "../types/image"
@@ -11,12 +13,12 @@ import type { Image } from "../types/image"
 const images: Image[] = await getCollection("images")
 ---
 
-<Layout title="Cloudinary Hackathon">
+<Layout title="Cloudinary Hackathon - Crea fondos de pantalla con tus fotos modificadas con estilos Halloween gracias a Cloudinary y midudev. Retoques SonGokuCoder con falta de tiempo jeje">
   <main>
-    <Heading color="brand" contrast={false}> Hackathon Cloudinary </Heading>
+    <Heading><Halloween /><br /><Halloween2 /></Heading>
     <CldUploadWidget
       id="upload-widget"
-      uploadPreset="upload-unsigned-images"
+      uploadPreset="pol-images"
       options={{
         sources: ["local"],
         multiple: false,
@@ -37,7 +39,7 @@ const images: Image[] = await getCollection("images")
         },
       }}
     >
-      <Button color="brand" as="button">Upload</Button>
+      <Button color="brand" as="button">Subir Imagen</Button>
     </CldUploadWidget>
     <ul>
       {
@@ -82,8 +84,9 @@ const images: Image[] = await getCollection("images")
   background-image: url('/public/fons-halloween-mobil.avif');
   background-size: cover;
   background-position: center;
-  height: 100vh; /* Asegura que cubra la altura de la ventana */
-  margin: 0; /* Elimina márgenes por defecto */
+  height: 100vh;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 /* Fondo para tabletas */
@@ -117,6 +120,16 @@ const images: Image[] = await getCollection("images")
       list-style: none;
     }
   </style>
-
-  <script></script>
 </Layout>
+
+<script defer>
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      const letters = document.querySelectorAll('.letters');
+      letters.forEach(letter => {
+        letter.style.color = '#FFFF00'; // Cambia el color a amarillo
+      });
+    }, 3000); // 3000 ms = 3 segundos
+  });
+</script>
+
