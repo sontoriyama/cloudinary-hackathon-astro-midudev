@@ -5,12 +5,15 @@ import { defineConfig } from 'astro/config';
 //import netlify from '@astrojs/netlify/edge-functions';
 //import deno from '@deno/astro-adapter';
 //import cloudflare from '@astrojs/cloudflare';
+// @ts-ignore
+import node from '@astrojs/node';
 
 import fulldev from 'fulldev-ui/integration'
 
 
 
 
+// @ts-ignore
 import node from '@astrojs/node';
 
 
@@ -19,6 +22,9 @@ import node from '@astrojs/node';
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
+  adapter: node({
+    mode: 'standalone',
+  }),
 
   experimental: {
     contentLayer: true
@@ -37,6 +43,7 @@ export default defineConfig({
     })
   ],
 
+  // @ts-ignore
   adapter: node({
     mode: 'standalone',
   }),
