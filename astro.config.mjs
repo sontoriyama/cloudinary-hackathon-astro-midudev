@@ -3,7 +3,8 @@ import { defineConfig } from 'astro/config';
 //import vercel from '@astrojs/vercel/serverless';
 //import netlify from '@astrojs/netlify/functions';
 //import netlify from '@astrojs/netlify/edge-functions';
-import deno from '@deno/astro-adapter';
+//import deno from '@deno/astro-adapter';
+import cloudflare from '@astrojs/cloudflare';
 
 import fulldev from 'fulldev-ui/integration'
 
