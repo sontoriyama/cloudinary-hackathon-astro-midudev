@@ -1,13 +1,25 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import vercel from '@astrojs/vercel/serverless';
+//import vercel from '@astrojs/vercel/serverless';
+import netlify from '@astrojs/netlify/functions';
+//import netlify from '@astrojs/netlify/edge-functions';
+
 import fulldev from 'fulldev-ui/integration'
+
 
 
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
-  adapter: vercel(),
+  adapter: netlify({
+    edgeMiddleware: true,
+//    edgeFunctions: true,
+  //  edgeNavigationFallback: true,
+//    runtime: 'edge',
+//    dist: './dist',
+ //   buildCommand: 'npm run build',
+  //  publishCommand: 'npm run publish',
+    }),
 
   experimental: {
     contentLayer: true
