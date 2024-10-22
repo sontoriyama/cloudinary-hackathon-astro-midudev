@@ -11,6 +11,11 @@ import fulldev from 'fulldev-ui/integration'
 
 
 
+import node from '@astrojs/node';
+
+
+
+
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
@@ -31,4 +36,8 @@ export default defineConfig({
       }
     })
   ],
+
+  adapter: node({
+    mode: 'standalone',
+  }),
 });
