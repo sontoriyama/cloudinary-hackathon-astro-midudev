@@ -4,7 +4,7 @@ import { defineConfig } from 'astro/config';
 //import netlify from '@astrojs/netlify/functions';
 //import netlify from '@astrojs/netlify/edge-functions';
 //import deno from '@deno/astro-adapter';
-import cloudflare from '@astrojs/cloudflare';
+//import cloudflare from '@astrojs/cloudflare';
 
 import fulldev from 'fulldev-ui/integration'
 
@@ -14,7 +14,6 @@ import fulldev from 'fulldev-ui/integration'
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
-  adapter: cloudflare(),
 
   experimental: {
     contentLayer: true
